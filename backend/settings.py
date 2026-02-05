@@ -196,3 +196,6 @@ CORS_ALLOW_HEADERS = [
 ADMIN_SITE_HEADER = "Admin"
 ADMIN_SITE_TITLE = "Admin"
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
