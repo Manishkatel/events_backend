@@ -27,9 +27,8 @@ def signup(request):
                 'user': {
                     'id': str(user.id),
                     'email': user.email,
-                    'full_name': profile.full_name or '',
-                    'role': profile.role
-                }
+                    'full_name': profile.full_name or ''
+                } 
             }, status=status.HTTP_201_CREATED)
         except Exception as e:
             return Response({
@@ -54,7 +53,7 @@ def login(request):
                 status=status.HTTP_401_UNAUTHORIZED
             )
         
-        user = authenticate(username=user.username, password=password)
+        user = authenticate(email=email, password=password)
         if user is None:
             return Response(
                 {'detail': 'Invalid credentials.'},
