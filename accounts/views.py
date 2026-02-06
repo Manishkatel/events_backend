@@ -108,7 +108,6 @@ class UpdateProfileView(generics.UpdateAPIView):
 @api_view(['POST'])
 @permission_classes([permissions.IsAuthenticated])
 def upload_profile_picture(request):
-    """Upload profile picture"""
     profile = request.user.profile
     if 'file' in request.FILES:
         profile.profile_picture = request.FILES['file']
